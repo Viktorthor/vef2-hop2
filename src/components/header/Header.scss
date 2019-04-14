@@ -1,4 +1,18 @@
 @import '../../config.scss';
 
 .header {
+ padding: 60px;
+ text-align: center;
+ background: #000000;
+ color: white;
+ justify-content: space-between;
+}
+
+.header__title {
+  font-size: 20px;
+}
+
+.header__haegri {
+  font-size: 20px;
+
 }

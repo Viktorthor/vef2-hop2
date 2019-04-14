@@ -10,7 +10,11 @@ export default function Home() {
         <h1 className="header__title">
           <Link className="header__titleLink" to="/">Vefforritunarbúðin</Link>
         </h1>
+        <div className="header__haegri">
         <NavLink activeClassName="header__link--selected" exact to="/cart">Karfa</NavLink>
+        <NavLink activeClassName="header__link--selected" exact to="/register">Nýskrá</NavLink>
+        <NavLink activeClassName="header__link--selected" exact to="/login">Innskrá</NavLink>
+        </div>
       </div>
     </header>
   );
