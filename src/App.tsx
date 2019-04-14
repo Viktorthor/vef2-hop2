@@ -22,6 +22,8 @@ type Props = {
   location: Location;
 };
 
+//Prufa á branch - má eyða
+
 function App(props: Props) {
   return (
     <React.Fragment>
