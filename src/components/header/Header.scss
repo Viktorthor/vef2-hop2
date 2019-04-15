@@ -1,18 +1,26 @@
 @import '../../config.scss';
 
 .header {
- padding: 60px;
- text-align: center;
- background: #000000;
- color: white;
- justify-content: space-between;
-}
+background: $color-font;
+ padding: $gutter;
 
-.header__title {
-  font-size: 20px;
-}
+ &__content {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
 
-.header__haegri {
-  font-size: 20px;
+ &__title {
+   font-size: 20px;
+ }
 
+ &__haegri {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: $gutter * 6;
+   color: $color-background;
+   font-family: $font-main;
+   justify-content: space-between;
+ }
 }

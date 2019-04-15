@@ -14,6 +14,8 @@ export default function Home() {
         <NavLink activeClassName="header__link--selected" exact to="/cart">Karfa</NavLink>
         <NavLink activeClassName="header__link--selected" exact to="/register">Nýskrá</NavLink>
         <NavLink activeClassName="header__link--selected" exact to="/login">Innskrá</NavLink>
+        <NavLink activeClassName="header__link--selected" exact to="/categories">Flokkar</NavLink>
+        <NavLink activeClassName="header__link--selected" exact to="/items">Nýjar vörur</NavLink>
         </div>
       </div>
     </header>
