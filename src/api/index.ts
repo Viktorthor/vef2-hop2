@@ -17,6 +17,19 @@ async function getProducts() {
   return result;
 }
 
+async function getCategories() {
+  const url = new URL(`/categories`, baseurl);
+  const response = await fetch(url.href);
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const result = await response.json();
+
+  return result;
+}
+
   export async function registerUser(username: any, password: any, email: any) {
     const options = {
       body: JSON.stringify({
@@ -62,4 +75,5 @@ async function getProducts() {
 export {
   getProduct,
   getProducts,
+  getCategories,
 };
