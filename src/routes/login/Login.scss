@@ -1,22 +1,30 @@
 @import '../../config.scss';
 
 .login {
+  padding: $gutter;
 
   &__contents {
     flex-direction: column;
     justify-content: space-between;
     font-family: $font-main;
-    padding: 10px;
+    width: 400px;
+  }
+
+  &__head {
+    font-family: $font-heading;
+    padding-bottom: 15px;
   }
 
   &__username {
+    padding-bottom: 15px;
     display: flex;
-    padding: 10px;
+    justify-content:  space-between;
   }
 
   &__password {
+    padding-bottom: 15px;
     display: flex;
-    padding: 10px;
+    justify-content:  space-between;
   }
 
   &__login {
@@ -24,9 +32,12 @@
     padding: 10px;
   }
 
-  &__takki {
-    display:flex;
-    padding: 10px;
-    border: none;
+  &__reg {
+    padding-top: 20px;
+    display: flex;
+    a {
+    color: black; 
+    text-decoration: none;
+    }
   }
 }

@@ -1,31 +1,50 @@
 @import '../../config.scss';
 
 .reg {
+  padding: $gutter;
+
+  &__head {
+    font-family: $font-heading;
+  }
 
   &__contents {
     flex-direction: column;
     justify-content: space-between;
     font-family: $font-main;
     padding: 10px;
+    width: 400px;
   }
 
   &__username {
     display: flex;
-    padding: 10px;
+    justify-content: space-between;
+    padding-top: 15px;
   }
 
   &__password {
     display: flex;
-    padding: 10px;
+    justify-content: space-between;
+    padding-top: 15px;
+  }
+
+  &__email {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   &__login {
+    padding-top: 20px;
     display: flex;
-    padding: 10px;
+    a {
+    color: black; 
+    text-decoration: none;
+    }
   }
 
   &__takki {
     display:flex;
-    padding: 10px;
+    padding-top: 15px;
   }
 }
