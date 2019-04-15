@@ -7,7 +7,7 @@ export default function CategoriesRoute(props: any) {
   return (
     <div className="categories">
       <div className="categories__box">
-        <p className="category__title">{category.title}</p>
+        <p className="categories__title">{category.title}</p>
     </div>
   </div>
   );
