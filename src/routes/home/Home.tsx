@@ -1,41 +1,39 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
-import Product from '../product/Product';
+import Products from '../../components/products/Products';
 import Categories from '../categories/Categories';
 import { getProducts } from '../../api/index';
 import { getCategories } from '../../api/index'; 
 import './Home.scss';
 import { IProduct, ICategory } from '../../api/types';
+import Button from '../../components/button/Button';
 
 
 export default function Home() {
   const [products, setProducts] = useState([] as IProduct[]);
   const [categories, setCategories] = useState([] as ICategory[]);
   const [loading, setLoading] = useState(false);
-  
+  // Sækir vörur
   useEffect(() => {
     const foo = async () => {
       const item = await getProducts();
-      const cat = await getCategories();
+
       setProducts(item.items);
+      setLoading(false);
+    };
+    foo();
+  }, []);
+  // Sækir flokka
+  useEffect(() => {
+    const foo = async () => {
+      const cat = await getCategories();
       setCategories(cat.items);
       setLoading(false);
     };
     foo();
   }, []);
 
-  /*
-  useEffect(() => {
-    const baz = async () => {
-      const cat = await getCategories();
-      setCategories(cat.categories);
-      setLoading(false);
-    };
-    baz();
-  }, []);
-*/
-
-
+  console.log(products);
   return (
     <Fragment>
       <Helmet title="Forsíða" />
@@ -45,13 +43,15 @@ export default function Home() {
             {loading && (
               <h2>Sæki vörur...</h2>
             )}
-            {products.map((product) => (
-              <Product
-                key={product.id}
-                product={product}
-              ></Product>
-            ))}
+            <Products
+              products={products}
+            ></Products>
           </div>
+
+          <Button
+            children={"Sýna alla flokka"}
+          ></Button>
+
           <div className="categories">
               {categories.map((category) => (
                 <Categories

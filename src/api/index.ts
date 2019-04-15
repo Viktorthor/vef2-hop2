@@ -1,5 +1,6 @@
 import { IProduct } from './types';
 import { async } from 'q';
+import 'isomorphic-fetch';
 
 // Sækja slóð á API úr env
 const baseurl:string | undefined = process.env.REACT_APP_API_URL;
@@ -15,6 +16,35 @@ async function getProducts() {
   const result = await response.json();
 
   return result;
+}
+
+async function getProductsDetails(id: number) {
+  const url = new URL (`/products/${id}`, baseurl);
+  const response = await fetch(url.href);
+  
+  if (!response.ok) {
+    return null;
+  }
+  
+  const result = await response.json();
+  console.log('RESPONSEDETAILS', result);
+  return result;
+}
+
+// Fall sem sækir vörur úr sama flokki
+async function getProductFromCat(id: number ) {
+  const product = await getProductsDetails(id);
+  const category = product.category_id;
+  const url = new URL(`products?category=${category}`, baseurl);
+  const response = await fetch(url.href);
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const result = await response.json();
+
+  return result.items;
 }
 
 async function getCategories() {
@@ -76,4 +106,6 @@ export {
   getProduct,
   getProducts,
   getCategories,
+  getProductsDetails,
+  getProductFromCat,
 };

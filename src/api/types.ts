@@ -16,3 +16,14 @@ export interface IProduct {
 
 
 // todo fleiri týpur
+/** ATH UR PRODUCT.TSX nedst
+ * <div className="more__products">
+        {console.log("products núna", details.id)}
+        {products.map((product) => (
+          <Product
+            key={product.id}
+            product={product}
+          ></Product>
+        ))}
+      </div>
+ */
