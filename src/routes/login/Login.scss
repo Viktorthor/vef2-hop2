@@ -1,4 +1,32 @@
 @import '../../config.scss';
 
 .login {
+
+  &__contents {
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: $font-main;
+    padding: 10px;
+  }
+
+  &__username {
+    display: flex;
+    padding: 10px;
+  }
+
+  &__password {
+    display: flex;
+    padding: 10px;
+  }
+
+  &__login {
+    display: flex;
+    padding: 10px;
+  }
+
+  &__takki {
+    display:flex;
+    padding: 10px;
+    border: none;
+  }
 }

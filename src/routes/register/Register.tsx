@@ -5,6 +5,7 @@ import './Register.scss';
 
 export default function Register() {
   return (
+    <div className = "reg">
     <div className = "reg__contents">
       <div className = "reg__username">
         Notendanafn: <input type="text" name="username"/>
@@ -14,9 +15,14 @@ export default function Register() {
         Lykilorð: <input type="password" name="password"/>
       </div>
 
+      <div className = "reg__takki">
+        <button type="button">Búa til notanda</button>
+      </div>
+
       <div className = "reg__login">
-        <NavLink activeClassName="header__link--selected" exact to="/login">Nú þegar skráður?</NavLink>
+        <NavLink activeClassName="header__link--selected" exact to="/login">Nú þegar skráð/ur?</NavLink>
       </div>
     </div>
+   </div>
   )
 }

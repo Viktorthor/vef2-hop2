@@ -1,8 +1,8 @@
 @import '../../config.scss';
 
 .header {
-background: $color-font;
- padding: $gutter;
+  background: $color-font;
+  padding: $gutter;
 
  &__content {
    display: flex;
@@ -11,7 +11,9 @@ background: $color-font;
  }
 
  &__title {
-   font-size: 20px;
+   font-family: $font-heading;
+   font-size: 30px;
+   align-self: center;
  }
 
  &__haegri {
@@ -23,4 +25,9 @@ background: $color-font;
    font-family: $font-main;
    justify-content: space-between;
  }
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
 }
