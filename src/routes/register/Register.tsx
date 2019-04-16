@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import './Register.scss';
 import '../../components/button/Button.scss';
 
 export default function Register() {
+  // Veit ekki hvað er í gangi hér, virkar ekki
+  const [data, setData] = useState({ userName: '', password: '' });
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState([]);
+
+  // async function onSubmit() {
+  //   setLoading(true);
+  //   setErrors([]);
+  //   const result = await loginUser(data.userName, data.password);
+  //
+  //   if(!result.success) {
+  //     setErrors(result.response);
+  //     setLoading(false);
+  //     return;
+  //   }
+  //   setLoading(false);
+  // }
+
   return (
     <div className = "reg">
     <div className = "reg__contents">

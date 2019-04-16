@@ -21,11 +21,11 @@ async function getProducts() {
 async function getProductsDetails(id: number) {
   const url = new URL (`/products/${id}`, baseurl);
   const response = await fetch(url.href);
-  
+
   if (!response.ok) {
     return null;
   }
-  
+
   const result = await response.json();
   console.log('RESPONSEDETAILS', result);
   return result;
