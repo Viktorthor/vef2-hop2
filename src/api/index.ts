@@ -87,6 +87,29 @@ async function getCategories() {
     }
   }
 
+  async function loginUser(userName: any, password: any) {
+    const options = {
+      body: JSON.stringify({
+        userName,
+        password
+      }),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    };
+
+    const url = new URL('/login', baseurl);
+
+    const response = await fetch(url.href, options);
+    const result = await response.json();
+    console.log("index", result);
+
+    return {
+      success: response.ok,
+      result
+    }
+  }
 
   // Fall sem sækir vöru eftir id-i
   async function getProduct(id: number | string) : Promise<IProduct> {
@@ -112,4 +135,5 @@ export {
   getProductsDetails,
   getProductFromCat,
   registerUser,
+  loginUser
 };
