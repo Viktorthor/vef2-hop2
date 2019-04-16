@@ -45,6 +45,7 @@ export default function Home() {
             )}
             <Products
               products={products}
+              history={history}
             ></Products>
           </div>
 

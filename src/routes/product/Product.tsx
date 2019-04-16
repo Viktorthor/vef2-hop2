@@ -3,7 +3,7 @@ import './Product.scss'
 import { IProduct } from '../../api/types';
 import { getProductsDetails, getProductFromCat } from '../../api/index';
 import Button from '../../components/button/Button';
-import Products from '../../components/products/Products';
+import Product from '../../components/products/Products';
 
 export default function ProductRoutes(props: any) {
   
@@ -36,8 +36,11 @@ export default function ProductRoutes(props: any) {
     foo();
   }, []);
 
-  async function onClickHandler() {
-    console.log('hallo');
+  async function onClickHandler(i: number) {
+    setLoading(true);
+    const item: IProduct = await getProductsDetails(i);
+    setDetails(item);
+    setLoading(false);
   }
 
   if (loading) return (
@@ -75,7 +78,7 @@ export default function ProductRoutes(props: any) {
     <div className="more">
       <h3>Meira úr {details.category}</h3>
       <div className="more__products">
-        
+      
       </div>
     </div>
     </Fragment>

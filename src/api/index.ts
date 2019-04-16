@@ -47,6 +47,7 @@ async function getProductFromCat(id: number ) {
   return result.items;
 }
 
+// Sækir Flokka
 async function getCategories() {
   const url = new URL(`/categories`, baseurl);
   const response = await fetch(url.href);
@@ -60,7 +61,8 @@ async function getCategories() {
   return result;
 }
 
-  export async function registerUser(username: any, password: any, email: any) {
+// Fall fyrir nýskráningu
+  async function registerUser(username: any, password: any, email: any) {
     const options = {
       body: JSON.stringify({
         username,
@@ -85,8 +87,9 @@ async function getCategories() {
     }
   }
 
-  async function getProduct(id: number | string) : Promise<IProduct> {
 
+  // Fall sem sækir vöru eftir id-i
+  async function getProduct(id: number | string) : Promise<IProduct> {
     const product : IProduct = {
       category: {
         id: 10,
@@ -108,4 +111,5 @@ export {
   getCategories,
   getProductsDetails,
   getProductFromCat,
+  registerUser,
 };
