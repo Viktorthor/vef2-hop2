@@ -11,7 +11,7 @@ export default function Login(props: any) {
 
   const [data, setData] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState<any>(false);
   const [errors, setErrors] = useState([]);
 
   async function onSubmit() {
@@ -66,11 +66,13 @@ export default function Login(props: any) {
       </div>
       <Input
         label={'Notendanafn:'}
+        type='text'
         onChange={onChangeUsername}>
       </Input>
 
       <Input
         label={'Lykilorð:'}
+        type='password'
         onChange={onChangePassword}>
       </Input>
 

@@ -1,5 +1,10 @@
 @import '../../config.scss';
 
 .input {
-
+  padding-bottom: 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: $font-main;
+  width: 400px;
+  padding-bottom: 15px;
 }

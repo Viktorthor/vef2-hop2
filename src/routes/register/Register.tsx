@@ -18,7 +18,7 @@ export default function Register(props: any) {
     setLoading(true);
     setErrors([]);
     const result = await registerUser(data.userName, data.password, data.email);
-  
+
     if(!result.success) {
       setErrors(result.result.errors);
     } else {
@@ -47,7 +47,7 @@ export default function Register(props: any) {
       email: e.target.value,
     });
   }
-    
+
   if (registered) {
     return(
       <div className={'register__wrapper'}>
@@ -73,20 +73,23 @@ export default function Register(props: any) {
     <div className="register__form">
       <Input
         label={'Notendanafn:'}
+        type='text'
         onChange={onChangeUser}>
       </Input>
       <Input
         label={'Lykilorð:'}
+        type='password'
         onChange={onChangePassword}>
       </Input>
       <Input
         label={'Netfang:'}
+        type='text'
         onChange={onChangeEmail}>
       </Input>
     </div>
 
     <div className="register__button">
-      <Button 
+      <Button
         onClick={onSubmit}
         >Nýskrá
       </Button>
