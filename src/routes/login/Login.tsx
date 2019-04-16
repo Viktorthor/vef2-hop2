@@ -9,7 +9,7 @@ import Input from '../../components/input/Input';
 
 export default function Login(props: any) {
 
-  const [data, setData] = useState({ userName: '', password: '' });
+  const [data, setData] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [login, setLogin] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -17,7 +17,7 @@ export default function Login(props: any) {
   async function onSubmit() {
     setLoading(true);
     setErrors([]);
-    const result = await loginUser(data.userName, data.password);
+    const result = await loginUser(data.username, data.password);
 
     if(!result.success) {
       setErrors(result.result.errors);
@@ -30,7 +30,7 @@ export default function Login(props: any) {
   function onChangeUsername(e: any){
     setData({
       ...data,
-      userName: e.target.value,
+      username: e.target.value,
     });
   }
 

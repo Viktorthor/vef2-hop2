@@ -87,10 +87,10 @@ async function getCategories() {
     }
   }
 
-  async function loginUser(userName: any, password: any) {
+  async function loginUser(username: any, password: any) {
     const options = {
       body: JSON.stringify({
-        userName,
+        username,
         password
       }),
       headers: {
@@ -99,7 +99,7 @@ async function getCategories() {
       method: 'POST',
     };
 
-    const url = new URL('/login', baseurl);
+    const url = new URL('/users/login', baseurl);
 
     const response = await fetch(url.href, options);
     const result = await response.json();
