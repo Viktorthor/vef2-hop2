@@ -78,7 +78,7 @@ export default function ProductRoutes(props: any) {
     <div className="more">
       <h3>Meira úr {details.category}</h3>
       <div className="more__products">
-      
+     
       </div>
     </div>
     </Fragment>

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import './Register.scss';
-//import Button from '../../components/button/Button.scss';
+import Button from '../../components/button/Button';
+import Input from '../../components/input/Input';
 import { registerUser } from '../../api/index';
 import { Redirect } from 'react-router-dom'
 
@@ -12,7 +13,7 @@ export default function Register(props: any) {
   const [loading, setLoading] = useState(false);
   const [registered, setRegistered] = useState(false);
   const [errors, setErrors] = useState([]);
-/*
+
   async function onSubmit() {
     setLoading(true);
     setErrors([]);
@@ -29,7 +30,7 @@ export default function Register(props: any) {
   function onChangeUser(e: any){
     setData({
       ...data,
-      user: e.target.value,
+      //user: e.target.value,
     });
   }
 
@@ -68,60 +69,29 @@ export default function Register(props: any) {
             ))}
         </div>
     )}
-  <div className="register__form">
-    <Input
-      label={'Notendanafn:'}
-      onChange={onChangeUser}>
-    </Input>
-    <Input
-      label={'Lykilorð:'}
-      onChange={onChangePassword}>
-    </Input>
-    <Input
-    label={'Netfang:'}
-    onChange={onChangeEmail}>
-    </Input>
+
+    <div className="register__form">
+      <Input
+        label={'Notendanafn:'}
+        onChange={onChangeUser}>
+      </Input>
+      <Input
+        label={'Lykilorð:'}
+        onChange={onChangePassword}>
+      </Input>
+      <Input
+        label={'Netfang:'}
+        onChange={onChangeEmail}>
+      </Input>
     </div>
 
     <div className="register__button">
       <Button 
-      onClick={onSubmit}
-      >Nýskrá
+        onClick={onSubmit}
+        >Nýskrá
       </Button>
     </div>
-    <Link to="/login" className="register__linkToLogin">Innskráning</Link>
+      <Link to="/login" className="register__linkToLogin">Innskráning</Link>
   </div>
   );
-
-
-
-  return (
-    <div className = "reg">
-    <div className = "reg__contents">
-      <div className = "reg__head">
-        <h1>Nýskráning</h1>
-      </div>
-      <div className = "reg__username">
-        Notendanafn: <input type="text" name="username"/>
-      </div>
-
-      <div className = "reg__password">
-        Lykilorð: <input type="password" name="password"/>
-      </div>
-
-      <div className = "reg__email">
-        Netfang: <input type="email" name="email"/>
-      </div>
-
-      <div className = "button">
-        <p>Nýskrá</p>
-      </div>
-
-      <div className = "reg__login">
-        <NavLink activeClassName="header__link--selected" exact to="/login">Innskráning</NavLink>
-      </div>
-    </div>
-   </div>
-  )
-  */
 }
