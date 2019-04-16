@@ -3,12 +3,12 @@ import './Product.scss'
 import { IProduct } from '../../api/types';
 import { getProductsDetails, getProductFromCat } from '../../api/index';
 import Button from '../../components/button/Button';
-import Product from '../../components/products/Products';
+import product from '../../components/products/Products';
 
 export default function ProductRoutes(props: any) {
   
   const { id } = props.match.params;
-  console.log(props);
+  console.log('HALLO',props);
 
   const [details, setDetails] = useState({} as IProduct);
   const [products, setProducts] = useState([] as IProduct[]);
@@ -48,7 +48,7 @@ export default function ProductRoutes(props: any) {
       <h3>Sæki upplýsingar</h3>
     </div>
   )
-    console.log(details);
+    console.log('HER ER EG', details);
   return (
     <Fragment>
       <div className="details">

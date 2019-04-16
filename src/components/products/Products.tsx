@@ -13,22 +13,27 @@ export default function Products(props: any) {
 
   return (
  
-        <div className="products"> 
+      <div className="products"> 
         {products.map((product: IProduct)  => (
-          <div className="productsContainer">
-            <div className="products__image">
-              <img className="products__img" src={product.image}></img>
+            <div className="productsContainer">
+            <Link to={`/product/${products.id}`} onClick={(e: any) => click(e, products.id)} className="product">
+              <div className="products__image">
+                <img className="products__img" src={product.image}></img>
+              </div>
+              <div className="products__info">
+                <div className="products__leftContainer">
+                  <p className="products__title">{product.title}</p>
+                  <p className="products__category">{product.category}</p>
+              </div>
+              <p className="products__price">{product.price} kr.-</p>
+              </div>
+              </Link>
             </div>
-            <div className="products__info">
-              <div className="products__leftContainer">
-                <p className="products__title">{product.title}</p>
-                <p className="products__category">{product.category}</p>
-            </div>
-            <p className="products__price">{product.price} kr.-</p>
-            </div>
-          </div>
         ))}
       </div>
     
   );
 }
+
+
+  

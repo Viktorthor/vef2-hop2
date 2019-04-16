@@ -33,7 +33,7 @@ export default function Home() {
     foo();
   }, []);
 
-  console.log(products);
+  // console.log(products);
   return (
     <Fragment>
       <Helmet title="Forsíða" />

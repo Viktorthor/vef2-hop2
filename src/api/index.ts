@@ -135,5 +135,5 @@ export {
   getProductsDetails,
   getProductFromCat,
   registerUser,
-  loginUser
+  loginUser,
 };
