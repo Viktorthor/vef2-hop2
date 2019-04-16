@@ -3,7 +3,7 @@
 .reg {
   padding: $gutter;
 
-  &__head {
+  &__wrapper {
     font-family: $font-heading;
   }
 
@@ -15,24 +15,24 @@
     width: 400px;
   }
 
-  &__username {
+  &__form {
     display: flex;
     justify-content: space-between;
     padding-top: 15px;
   }
 
-  &__password {
+  /*&__password {
     display: flex;
     justify-content: space-between;
     padding-top: 15px;
-  }
+  }*/
 
-  &__email {
+  /*&__email {
     display: flex;
     justify-content: space-between;
     padding-top: 15px;
     padding-bottom: 15px;
-  }
+  }*/
 
   &__login {
     padding-top: 20px;

@@ -18,6 +18,7 @@ export default function Login(props: any) {
     setLoading(true);
     setErrors([]);
     const result = await loginUser(data.username, data.password);
+    console.log(result);
 
     if(!result.success) {
       setErrors(result.result.errors);

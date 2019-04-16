@@ -30,7 +30,7 @@ export default function Register(props: any) {
   function onChangeUser(e: any){
     setData({
       ...data,
-      //user: e.target.value,
+      userName: e.target.value,
     });
   }
 
