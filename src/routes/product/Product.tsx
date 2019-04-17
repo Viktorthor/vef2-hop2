@@ -3,7 +3,8 @@ import './Product.scss'
 import { IProduct } from '../../api/types';
 import { getProductsDetails, getProductFromCat } from '../../api/index';
 import Button from '../../components/button/Button';
-import product from '../../components/products/Products';
+import Products from '../../components/products/Products';
+import { Redirect } from 'react-router-dom';
 
 export default function ProductRoutes(props: any) {
   

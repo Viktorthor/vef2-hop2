@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { IProduct } from '../../api/types';
 
 export default function Products(props: any) {
-  const { products, history, onClick } = props;
+  const { products,  onClick } = props;
   function click(e: any, id: number){
     if (onClick) onClick(id);
   }
@@ -16,7 +16,7 @@ export default function Products(props: any) {
       <div className="products"> 
         {products.map((product: IProduct)  => (
             <div className="productsContainer">
-            <Link to={`/product/${products.id}`} onClick={(e: any) => click(e, products.id)} className="product">
+            <Link to={`/product/${product.id}`} onClick={(e: any) => click(e, product.id)} className="product">
               <div className="products__image">
                 <img className="products__img" src={product.image}></img>
               </div>
