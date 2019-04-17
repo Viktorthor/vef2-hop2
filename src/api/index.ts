@@ -114,7 +114,7 @@ async function getCategories() {
   // Fall sem sækir vöru eftir id-i
   async function getProduct(id: number | string) : Promise<IProduct> {
     const product : IProduct = {
-      category: {
+      category_title: {
         id: 10,
         title: "Flokkur",
       },

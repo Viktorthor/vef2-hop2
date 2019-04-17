@@ -15,6 +15,11 @@
         padding: 60px;
         height: 200px;
         text-align: center;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
     }
 
     &__title {
@@ -22,4 +27,19 @@
       margin: auto;
       font-size: 50px;
     }
+
+  .category {
+    text-decoration: none;
+    color: black;
+  }
+
+  
+  .notClickable {
+    pointer-events: none;
+
+    &:hover {
+      background-color: initial;
+    }
+  }
 }
+

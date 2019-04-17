@@ -58,7 +58,7 @@ export default function ProductRoutes(props: any) {
       </div>
       <div className="details__info">
         <h3 className="details__title">{details.title}</h3>
-        <p className="details__category">Flokkur: {details.category}</p>
+        <p className="details__category">Flokkur: {details.category_title}</p>
         <p className="details__price">Verð: {details.price} kr.-</p>
         {typeof details.description === 'string' && (details.description.split('\n').map((item, key) => (
           <p className="details__description" key={key}>{item}</p> ))
@@ -77,9 +77,14 @@ export default function ProductRoutes(props: any) {
       </div>
     </div>
     <div className="more">
-      <h3>Meira úr {details.category}</h3>
+      <h3>Meira úr {details.category_title}</h3>
       <div className="more__products">
-     
+      
+     <Products
+      products={products}
+      >
+      </Products>
+
       </div>
     </div>
     </Fragment>

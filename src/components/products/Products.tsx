@@ -16,14 +16,14 @@ export default function Products(props: any) {
       <div className="products"> 
         {products.map((product: IProduct)  => (
             <div className="productsContainer">
-            <Link to={`/product/${product.id}`} onClick={(e: any) => click(e, product.id)} className="product">
+            <Link to={`/product/${product.id}`} onClick={(e: any) => click(e, product.id)} className="productBTTN">
               <div className="products__image">
                 <img className="products__img" src={product.image}></img>
               </div>
               <div className="products__info">
                 <div className="products__leftContainer">
                   <p className="products__title">{product.title}</p>
-                  <p className="products__category">{product.category}</p>
+                  <p className="products__category">{product.category_title}</p>
               </div>
               <p className="products__price">{product.price} kr.-</p>
               </div>

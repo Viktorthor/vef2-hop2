@@ -7,6 +7,7 @@ import { getCategories } from '../../api/index';
 import './Home.scss';
 import { IProduct, ICategory } from '../../api/types';
 import Button from '../../components/button/Button';
+import { Link } from 'react-router-dom';
 
 
 export default function Home() {
@@ -48,18 +49,21 @@ export default function Home() {
               history={history}
             ></Products>
           </div>
-
-          <Button
-            children={"Sýna alla flokka"}
-          ></Button>
+          
+          <Link to="/categories">
+            <Button
+            >
+            Sýna alla flokka
+            </Button>
+          </Link>
 
           <div className="categories">
-              {categories.map((category) => (
+              
                 <Categories
-                  key={category.title}
-                  category={category}
+                  notClickable
+                  categories={categories}
                 ></Categories>
-              ))}
+            
           </div>
       </div>
     </Fragment>

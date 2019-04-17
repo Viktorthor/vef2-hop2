@@ -8,7 +8,7 @@ export interface IProduct {
   title: string;
   price: number;
   image: string;
-  category: ICategory;
+  category_title: ICategory;
   description?: string;
   created?: Date;
   updated?: Date;
@@ -16,6 +16,7 @@ export interface IProduct {
 
 
 // todo fleiri týpur
+
 /** ATH UR PRODUCT.TSX nedst
  * <div className="more__products">
         {console.log("products núna", details.id)}
