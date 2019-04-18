@@ -127,6 +127,26 @@ async function getCategories() {
     return new Promise((resolve) => resolve(product))
   }
 
+async function getCart() {
+  const options = {
+    headers: {
+      'content-type': 'application/json',
+    },
+    method: 'GET',
+  };
+
+  const url = new URL('/cart', baseurl);
+
+  const response = await fetch(url.href, options);
+  const result = await response.json();
+
+  return {
+    success: response.ok,
+    result
+  }
+}
+
+
 
 export {
   getProduct,
@@ -136,4 +156,5 @@ export {
   getProductFromCat,
   registerUser,
   loginUser,
+  getCart,
 };
