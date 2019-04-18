@@ -110,6 +110,29 @@ async function getCategories() {
       result
     }
   }
+// Fall til að bæta við körfu
+  async function postCart(id : number) {
+    const options = {
+      body: JSON.stringify({
+        id
+      }),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    };
+
+    const url = new URL('/cart', baseurl);
+
+    const response = await fetch(url.href, options);
+    const result = await response.json();
+    console.log("index", result);
+
+    return {
+      success: response.ok,
+      result
+    }
+  }
 
   // Fall sem sækir vöru eftir id-i
   async function getProduct(id: number | string) : Promise<IProduct> {

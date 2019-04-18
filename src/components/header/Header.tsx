@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import './Header.scss';
 
 export default function Home() {
+
   return (
     <header className="header">
       <div className="header__content">
