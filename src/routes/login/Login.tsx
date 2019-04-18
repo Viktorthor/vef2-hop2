@@ -45,9 +45,9 @@ export default function Login(props: any) {
   if (login) {
     return(
       <div className={'login__contents'}>
-        <h1>Skráður inn</h1>
-        <h3 className="register__success">Þú hefur skráð þig inn</h3>
-        <Link to="/" className="register__linkToLogin">Versla vörur!</Link>
+        <h1>Velkomin/n</h1>
+        <h3 className="register__success">Þú hefur skráð þig inn {data.username}!</h3>
+        <Link to="/" className="register__linkToLogin">Byrjaðu að versla vörur hér</Link>
       </div>
     )
   }
