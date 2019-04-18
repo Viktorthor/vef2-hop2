@@ -3,11 +3,45 @@ import Helmet from 'react-helmet';
 import './Cart.scss';
 
 import Input from '../../components/input/Input';
-import { getCart } from '../../api/index';
+import Button from '../../components/button/Button';
+import { IProduct, ICart } from '../../api/types';
+import { getCart, getProducts } from '../../api/index';
+import Products from '../../components/products/Products';
 
 
 export default function Cart() {
-  /*
+  const [data, setData] = useState({ name: '', address: ''});
+
+  const [cart, setCart] = useState([] as ICart[]);
+  // const [errors, setErrors] = useState([] as IErrors[]);
+  const [products, setProducts] = useState([] as IProduct[]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const foo = async () => {
+      setLoading(true);
+      const items = await getCart();
+      setCart(items.result);
+      setLoading(false)
+    };
+    foo();
+  }, []);
+
+  function onChangeName(e: any) {
+    setData({
+      ...data,
+      name: e.target.value,
+    })
+  }
+
+  function onChangeAddress(e: any) {
+    setData({
+      ...data,
+      address: e.target.value,
+    })
+  }
+
+
   return (
     <Fragment>
       <Helmet title="Karfa" />
@@ -45,5 +79,4 @@ export default function Cart() {
       </div>
     </Fragment>
   );
-  */
 }

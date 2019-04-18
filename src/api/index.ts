@@ -111,6 +111,43 @@ async function getCategories() {
     }
   }
 
+  async function getCart() {
+    const options = {
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'GET',
+    };
+  
+    const url = new URL('/cart', baseurl);
+  
+    const response = await fetch(url.href, options);
+    const result = await response.json();
+  
+    return {
+      success: response.ok,
+      result
+    }
+  }
+
+  async function getCategoryDetails(id: number) {
+    const url = new URL(`categories/${id}`, baseurl);
+    const response = await fetch(url.href);
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const result = await response.json();
+
+    return result;
+  }
+
+  async function searchInCategory(searchString: string, id: number) {
+
+  }
+
+
   // Fall sem sækir vöru eftir id-i
   async function getProduct(id: number | string) : Promise<IProduct> {
     const product : IProduct = {
@@ -127,26 +164,6 @@ async function getCategories() {
     return new Promise((resolve) => resolve(product))
   }
 
-async function getCart() {
-  const options = {
-    headers: {
-      'content-type': 'application/json',
-    },
-    method: 'GET',
-  };
-
-  const url = new URL('/cart', baseurl);
-
-  const response = await fetch(url.href, options);
-  const result = await response.json();
-
-  return {
-    success: response.ok,
-    result
-  }
-}
-
-
 
 export {
   getProduct,
@@ -157,4 +174,6 @@ export {
   registerUser,
   loginUser,
   getCart,
+  getCategoryDetails,
+  searchInCategory,
 };
