@@ -1,36 +1,34 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 //import './Category.scss';
-import { getCategoryDetails, getProductFromCategory, getCategory, getCategories } from '../../api/index';
+import { getProductFromCat, getCategoryDetails } from '../../api/index';
 import { IProduct, ICategory } from '../../api/types';
+//import Products from '../../components/product/Product';
+//import Search from '../../components/search/Search';
 import Products from '../../components/products/Products';
-import Search from '../../components/search/Search';
-import Button from '../../components/button/Button';
 
 
 export default function Category(props: any) {
   const { id } = props.match.params;
-  console.log(props);
 
-
-  const [categories, setCategories] = useState({} as ICategory);
+  
+  console.log("Typpasvigar");
+  
+  
+  //const [categories, setCategories] = useState({} as ICategory);
   const [products, setProducts] = useState([] as IProduct[]);
   const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
+  const [category, setCategory] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     const foo = async () => {
       setLoading(true);
-      const cat: ICategory = await getCategoryDetails(id);
-    
-      if(cat === null){
-        setNotFound(true);
-        return;
-      }
-      setCategories(cat);
-      const itemsFromCat = await getCategory(id, 10);
-      setProducts(itemsFromCat);
-      setLoading(false)
+      const categor = await getProductFromCat(id); 
+      const cattemp = await getCategoryDetails(categor[0].category_id);
+      setCategory(cattemp.title);
+      setProducts(categor);
+      setLoading(false);
     };
     foo();
   }, []);
@@ -59,15 +57,14 @@ export default function Category(props: any) {
   )
 
   return (
-    <Fragment>
-      <div className="home">
-        
-      </div>
-    </Fragment>
-    
-   /* <p>hallo</p> */
+    <React.Fragment>
+      <h1>{category}</h1>
+    <Products
+      products={products}
+      >
+      </Products>
+    </React.Fragment>
   )
-  
 }
 
 

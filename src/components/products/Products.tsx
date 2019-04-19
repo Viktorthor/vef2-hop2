@@ -5,14 +5,10 @@ import { Link } from 'react-router-dom';
 import { IProduct } from '../../api/types';
 
 export default function Products(props: any) {
-  const { products,  onClick } = props;
-  //this.products({})
-  
+  const { products,  onClick = () => {} } = props;
   function click(e: any, id: number){
-    if (onClick) Products(props);
+    if (onClick) Products(id);
   }
-  
-  // console.log('P',props);
 
   return (
  

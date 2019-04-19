@@ -7,13 +7,20 @@
     padding: $gutter;
 
     &__image {
+        max-width: 650px;
         padding-top: $gutter;
         padding-bottom: $gutter;
         padding-left: $gutter;
         padding-right: $gutter/2;
     }
 
+    &__img {
+        max-width: 100%;
+        height: auto;
+    }
+
     &__info {
+        max-width: 650px;
         padding-top: $gutter;
         padding-bottom: $gutter;
         padding-left: $gutter/2;
