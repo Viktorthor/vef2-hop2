@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { getCategory } from '../../api/index';
-import { IProduct } from '../../api/types';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
+//import './Category.scss';
+import { getProductFromCategory, getCategoryDetails } from '../../api/index';
+import { IProduct, ICategory } from '../../api/types';
+//import Products from '../../components/product/Product';
+//import Search from '../../components/search/Search';
 import Products from '../../components/products/Products';
 
 
@@ -11,13 +15,14 @@ export default function Category(props: any) {
   const [products, setProducts] = useState([] as IProduct[]);
   const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(false);
 
   useEffect(() => {
     const foo = async () => {
       setLoading(true);
-      const categor = await getCategory(id, 10); 
-      setCategory(categor[0].category_title);
+      const categor = await getProductFromCategory(id); 
+      const cattemp = await getCategoryDetails(categor[0].category_id);
+      setCategory(cattemp.title);
       setProducts(categor);
       setLoading(false);
     };

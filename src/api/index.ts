@@ -165,6 +165,68 @@ async function getCategories() {
     }
   }
 
+  async function updateCart(id: number, quantity: number) {
+    console.log('Blessaður!', id, quantity);
+    
+    const options = {
+      body: JSON.stringify({
+        quantity
+      }),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'PATCH',
+    };
+  
+    const url = new URL(`cart/line/${id}`, baseurl);
+  
+    const response = await fetch(url.href, options);
+    const result = await response.json();
+  
+    return {
+      success: response.ok,
+      result
+    }
+  }
+  
+  async function removeFromCart(id: number) {
+    const options = {
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'DELETE',
+    };
+  
+    const url = new URL(`cart/line/${id}`, baseurl);
+    const response = await fetch(url.href, options);
+  
+    return response.ok;
+  }
+
+  async function placeOrder(name: string, address: string) {
+    const options = {
+      body: JSON.stringify({
+        name,
+        address
+      }),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    };
+    
+    const url = new URL('/orders', baseurl);
+  
+    const response = await fetch(url.href, options);
+    const result = await response.json();
+    console.log('Index', result);
+    
+    return {
+      success: response.ok,
+      result
+    }
+  }
+
   async function getCategory(id: number, limit: number) {
     const url = new URL(`products?category=${id}`, baseurl);
     const response = await fetch(url.href);
@@ -229,4 +291,7 @@ export {
   getCategory,
   searchInCategory,
   logOut,
+  updateCart,
+  removeFromCart,
+  placeOrder
 };

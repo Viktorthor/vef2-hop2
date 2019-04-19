@@ -60,12 +60,9 @@ export default function Home() {
           </div>
 
           <div className="categories">
-              
                 <Categories
-                  notClickable
                   categories={categories}
                 ></Categories>
-            
           </div>
       </div>
     </Fragment>
