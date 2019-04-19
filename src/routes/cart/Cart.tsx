@@ -14,7 +14,7 @@ export default function Cart() {
   const username = localStorage.getItem('username');
 
   const [cart, setCart] = useState([] as ICart[]);
-  const [products, setProducts] = useState([] as IProduct[]);
+  // const [products, setProducts] = useState([] as IProduct[]);
   const [errors, setErrors] = useState([] as IErrors[]);
 
   const [loading, setLoading] = useState(false);
@@ -29,12 +29,10 @@ export default function Cart() {
       setLoading(true);
       const items = await getCart();
       console.log(items);
-      /*
       if (items !== null) {
         setCart(items.lines);
         setTotal(items.total)
       }
-      */
       setLoading(false)
     };
     foo();
@@ -58,12 +56,11 @@ export default function Cart() {
     setLoading(true);
     const items = await getCart();
     console.log(items);
-    /*
+    
     if (items !== null) {
       setCart(items.lines);
       setTotal(items.total)
     } 
-    */
     setLoading(false)
   }
 
@@ -134,9 +131,9 @@ export default function Cart() {
           </ul>
         )}
 
-        <div className={'shipping'} >
-          <h2 className={'shipping__header'}>Senda inn pöntun</h2>
-          <div className={'shipping__form'}>
+        <div className={'shippingInfo'} >
+          <h2 className={'shippingInfo__header'}>Senda inn pöntun</h2>
+          <div className={'shippingInfo__form'}>
             <Input
               label={'Nafn:'}
               onChange={onChangeName}>
@@ -146,7 +143,7 @@ export default function Cart() {
               onChange={onChangeAddress}>
             </Input>      
           </div>
-          <div className="shipping__button">
+          <div className="shippingInfo__button">
             <Button 
               onClick={onSubmit}
             >

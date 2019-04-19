@@ -228,14 +228,15 @@ async function getCategories() {
     };
 
     const url = new URL('/cart', baseurl);
-
     const response = await fetch(url.href, options);
+
+    if (!response.ok) {
+      return null;
+    }
+
     const result = await response.json();
 
-    return {
-      success: response.ok,
-      result
-    }
+    return result;
   }
 
   async function getCategoryDetails(id: number) {

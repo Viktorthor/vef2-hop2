@@ -1,5 +1,66 @@
 @import '../../config.scss';
 
 .orders {
-
-}
+    max-width: $max-width;
+    margin: 2rem 1rem;
+    padding: 0 10%;
+  }
+  
+  .orders__title {
+    margin: 1rem 0;
+    
+  }
+  
+  .table {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    width: 100%;
+    
+  }
+  
+  .table__body__row:nth-child(even) {
+    background: $color-gray;
+  }
+  
+  .table__head {
+    background: $color-font;
+    color: $color-background;
+    text-align: left;
+  }
+  
+  .table__head__item {
+    margin: 0;
+  }
+  
+  td, th {
+    padding: 4px;
+  }
+  
+  .table__body__link {
+    text-decoration: none;
+    color: $color-font
+  }
+  
+  .table__body__total {
+    font-weight: 700;
+    background: $color-background;
+  }
+  
+  .order__info {
+    margin: 2rem 0;
+  }
+  
+  .order__info__item {
+    display: flex;
+    
+    p:nth-child(1) {
+      width: 30%;
+      font-weight: 700;
+    }
+  }
+  
+  .order__link {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: $color-font;
+  }

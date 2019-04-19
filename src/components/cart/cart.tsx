@@ -20,7 +20,7 @@ export default function Cart(props: any) {
     onChange();
   }
 
-  function klikk(e: any, id: number){
+  function Click(e: any, id: number){
     if(onClick) onClick(id);
   }
 
@@ -62,20 +62,20 @@ export default function Cart(props: any) {
   }
 
   return (
-    <Link to={`/cart`}  className={deleted ? "cart__item--deleted" : "cart__item"} style={{ textDecoration: 'none', color: '#000' }}>
+    <Link to={`/cart`}  className={deleted ? "cart__item__deleted" : "cart__item"} style={{ textDecoration: 'none', color: '#000' }}>
       
       <div className="cart__image"> 
         <img className="cart__img" src={details.image}></img>
       </div>
       <div className="cart__info">
-        <Link to={`/product/${details.product_id}`} onClick={(e: any) => klikk(e, details.product_id)} className="cart__title">
+        <Link to={`/product/${details.product_id}`} onClick={(e: any) => Click(e, details.product_id)} className="cart__title">
           <p>{details.title}</p>
         </Link>
         <p className="cart__price">Verð: {details.price} kr.-</p>
       </div>
 
       <div className="cart__form">
-        <div className="cart__form__top">
+        <div className="cart__form__topPart">
           <span className="cart__form__number">Fjöldi:</span>
           <input className="cart__form__input" onChange={onChangeQuantity} type="number" min="1" value={quantity}></input>
           <Button
@@ -85,13 +85,13 @@ export default function Cart(props: any) {
             // TODO onclick handler til að bæta í körfu + loading state
           ></Button>
           {cartMessage && (
-            <span className="cart__form__top__cartMessage">{cartMessage}</span>
+            <span className="cart__form__topPart__cartMessage">{cartMessage}</span>
           )}
         </div>
-        <div className="cart__form__middle">
+        <div className="cart__form__middlePart">
           <p>Samtals: {details.total} kr.-</p>
         </div>
-        <div className="cart__form__bottom">
+        <div className="cart__form__bottomPart">
           <Button
             onClick={removeFromCartHandler}
             small={true}

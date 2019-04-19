@@ -20,6 +20,7 @@ export default function Orders(props: any) {
     const foo = async () => {
       setLoading(true);
       const items = await getOrders();
+      console.log('HALLO', items)
       if (items !== null) {
         setOrders(items.items);
       } 
@@ -31,7 +32,7 @@ export default function Orders(props: any) {
     foo();
   }, []);
 
-  function klikk(e: any, id: number){
+  function Click(e: any, id: number){
     if(onClick) onClick(id);
   }
 
@@ -69,7 +70,7 @@ export default function Orders(props: any) {
             <tbody className="table__body">
               {username && orders.map((order) => (
                 <tr className="table__body__row">
-                  <td className="table__body__item"><Link to={`/orders/${order.id}`} onClick={(e: any) => klikk(e, order.id)} className="table__body__link">Pöntun #{order.id}</Link></td>
+                  <td className="table__body__item"><Link to={`/orders/${order.id}`} onClick={(e: any) => Click(e, order.id)} className="table__body__link">Pöntun #{order.id}</Link></td>
                   <td className="table__body__item">{order.name}</td>
                   <td className="table__body__item">{order.address}</td>
                   <td className="table__body__item">{order.created}</td>
