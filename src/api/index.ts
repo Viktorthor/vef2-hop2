@@ -201,6 +201,10 @@ async function getCategories() {
     localStorage.removeItem('username');
   }
 
+  /*
+  Leyndir Typpasvigar fyrir Viktor
+  */
+
 export {
   getProduct,
   getProducts,
