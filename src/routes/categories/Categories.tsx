@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 export default function CategoriesRoute(props: any) {
   const { category, onClick, notClickable } = props;
-  console.log('P', props);
 
   const [products, setProducts] = useState([] as IProduct[]);
   const [categories, setCategories] = useState([] as ICategory[]);
