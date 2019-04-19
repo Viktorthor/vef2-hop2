@@ -108,6 +108,7 @@ async function getCategories() {
     if(result) {
       const { token } = result;
       localStorage.setItem('token', token);
+      localStorage.setItem('username', username);
     }
 
     return {
@@ -198,6 +199,11 @@ async function getCategories() {
     return new Promise((resolve) => resolve(product))
   }
 
+  async function logOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+  }
+
 export {
   getProduct,
   getProducts,
@@ -209,4 +215,5 @@ export {
   getCart,
   getCategoryDetails,
   searchInCategory,
+  logOut,
 };
