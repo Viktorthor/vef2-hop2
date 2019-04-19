@@ -5,6 +5,7 @@ import { getProductsDetails, getProductFromCategory } from '../../api/index';
 import Button from '../../components/button/Button';
 import Products from '../../components/products/Products';
 import { Redirect } from 'react-router-dom';
+import { postCart } from '../../api/index';
 
 export default function ProductRoutes(props: any) {
 
@@ -14,7 +15,6 @@ export default function ProductRoutes(props: any) {
   const [details, setDetails] = useState({} as IProduct);
   const [products, setProducts] = useState([] as IProduct[]);
   const [loading, setLoading] = useState(false);
-  //const id = 999;
    // Sækir vörur
    useEffect(() => {
     const foo = async () => {
@@ -68,13 +68,13 @@ export default function ProductRoutes(props: any) {
         <div className="details__lower">
           <span>Fjöldi</span>
           <input className="details__input" type="textarea"></input>
-          
+
           <div className="details__button">
             <Button
             small={true}
             children="Bæta við körfu"
             ></Button>
-          
+
           </div>
         </div>
       </div>

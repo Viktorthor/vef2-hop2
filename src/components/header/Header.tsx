@@ -23,7 +23,7 @@ export default function Home() {
         </Link>
         <NavLink activeClassName="header__link--selected" exact to="/orders">Pantanir</NavLink>
         <NavLink activeClassName="header__link--selected" exact to="/cart">Karfa</NavLink>
-        <NavLink activeClassName="header__link--selected" exact to="/products/250">Nýjar vörur</NavLink>
+        <NavLink activeClassName="header__link--selected" exact to="/">Nýjar vörur</NavLink>
         <NavLink activeClassName="header__link--selected" exact to="/categories">Flokkar</NavLink>
         </div>
       </div>
@@ -38,7 +38,7 @@ export default function Home() {
         <NavLink activeClassName="header__link--selected" exact to="/register">Nýskrá</NavLink>
         <NavLink activeClassName="header__link--selected" exact to="/login">Innskrá</NavLink>
         <NavLink activeClassName="header__link--selected" exact to="/cart">Karfa</NavLink>
-        <NavLink activeClassName="header__link--selected" exact to="/products/250">Nýjar vörur</NavLink>
+        <NavLink activeClassName="header__link--selected" exact to="/">Nýjar vörur</NavLink>
         <NavLink activeClassName="header__link--selected" exact to="/categories">Flokkar</NavLink>
         </div>
       </div>
