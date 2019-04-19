@@ -52,7 +52,6 @@ export default function ProductRoutes(props: any) {
 
   async function addToCart() {
     const bag = await postCart(id, amount);
-    console.log(bag);
   }
 
   if (loading) return (
@@ -78,7 +77,6 @@ export default function ProductRoutes(props: any) {
         <div className="details__lower">
           <span>Fjöldi</span>
           <input onChange={onChangeAmount} className="details__input" type="textarea"></input>
-
           <div className="details__button">
             <Button
             small={true}

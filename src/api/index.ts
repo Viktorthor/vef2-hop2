@@ -135,7 +135,6 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    console.log("index", result);
 
     return {
       success: response.ok,
@@ -158,7 +157,8 @@ async function getCategories() {
   async function getCart() {
     const options = {
       headers: {
-        'content-type': 'application/json',
+         'Authorization': 'Bearer ' + localStorage.getItem('token'),
+         'Content-Type': 'application/json',
       },
       method: 'GET',
     };
