@@ -29,11 +29,12 @@ export default function Cart() {
       setLoading(true);
       const items = await getCart();
       console.log(items);
-      
+      /*
       if (items !== null) {
         setCart(items.lines);
         setTotal(items.total)
       }
+      */
       setLoading(false)
     };
     foo();
