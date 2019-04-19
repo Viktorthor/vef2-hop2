@@ -1,5 +1,22 @@
 # Hópverkefni 2
+## Einar Guðni Guðjónsson (egg18@hi.is)
+## Ómar Þór Arnarsson (otha3@hi.is)
+## Viktor Þór Freysson (vthf1@hi.is)
 
+#Innskráning
+Innskráning er í raun sú sama og sýnilausn.
+
+Ekki admin:
+* username : oli / password : hallóheimur
+
+Admin:
+* username : admin / password : hóp1-2019-admin
+
+##Uppsetning verkefnis
+* Keyra þarf npm install til að fá alla viðeigandi pakka
+* Næst skal keyra npm start til að runna react-script
+
+---------------------------------------------------------
 Útfæra skal framenda ofan á vefþjónustur úr hópverkefni 1.
 
 ## Virkni
