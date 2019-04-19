@@ -32,3 +32,24 @@
   text-decoration: none;
   color: white;
 }
+
+@media (max-width:450px) {
+  .header {
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__haegri {
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+      flex-wrap: wrap;
+      color: $color-background;
+      font-family: $font-main;
+      justify-content: space-around;
+    }
+
+  }
+}

@@ -12,4 +12,16 @@
     .categories {
         pointer-events: none;
     }
+
+    @media (max-width:450px) {
+        .products {
+            display:flex;
+            flex-direction: column;
+        }
+
+        .categories {
+            display:flex;
+            flex-direction: column;
+        }
+    }
 }

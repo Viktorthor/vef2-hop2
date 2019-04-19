@@ -49,3 +49,16 @@
         width: 95%;
     }
 }
+
+@media (max-width:450px) {
+    .products {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .productsContainer {
+        margin: auto;
+        width: 100%;
+        margin: 20px 5px;
+    }
+}

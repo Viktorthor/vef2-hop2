@@ -4,7 +4,6 @@
     max-width: 1400px;
     display: flex;
     justify-content: space-evenly;
-    padding: $gutter;
 
     &__image {
         max-width: 650px;
@@ -52,6 +51,17 @@
         flex-wrap: nowrap;
         justify-content: space-between;
         max-width: 250px;
+    }
+}
+
+@media (max-width:450px) {
+    .details {
+        display: flex;
+        flex-direction: column;
+
+        &__info {
+            padding: 0;
+        }
     }
 }
 

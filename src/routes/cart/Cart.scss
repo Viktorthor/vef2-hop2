@@ -1,7 +1,7 @@
 @import '../../config.scss';
 
 .cart {
-    max-width: $max-width;
+  max-width: $max-width;
   margin: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -30,4 +30,8 @@
   margin: 2rem 1rem;
 }
 
-
+@media (max-width:450px) {
+  .cart__total {
+    padding-left: $gutter/2;
+  }
+}
