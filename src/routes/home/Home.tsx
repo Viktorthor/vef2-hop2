@@ -71,12 +71,3 @@ export default function Home() {
     </Fragment>
   );
 }
-
-
-/**
- * {data.map((i:any ) => {
- *  <Product
- *    productDetails={i}
- *  ></Product>
- * })}
- */

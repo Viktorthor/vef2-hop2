@@ -8,4 +8,8 @@
         margin-top: $gutter/2;
         margin-bottom: $gutter/2;
     }
+
+    .categories {
+        pointer-events: none;
+    }
 }
