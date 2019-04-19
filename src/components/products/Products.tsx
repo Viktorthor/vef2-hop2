@@ -6,17 +6,20 @@ import { IProduct } from '../../api/types';
 
 export default function Products(props: any) {
   const { products,  onClick } = props;
+  //this.products({})
+  
   function click(e: any, id: number){
-    if (onClick) onClick(id);
+    if (onClick) Products(props);
   }
-  console.log('P',props);
+  
+  // console.log('P',props);
 
   return (
  
       <div className="products"> 
         {products.map((product: IProduct)  => (
             <div className="productsContainer">
-            <Link to={`/product/${product.id}`} onClick={(e: any) => click(e, product.id)} className="productBTTN">
+            <Link to={`/product/${product.id}`} onClick={(e: any) => click(e, props)} className="productBTTN">
               <div className="products__image">
                 <img className="products__img" src={product.image}></img>
               </div>

@@ -27,12 +27,12 @@ async function getProductsDetails(id: number) {
   }
 
   const result = await response.json();
-  console.log('RESPONSEDETAILS', result);
+  // console.log(result);
   return result;
 }
 
 // Fall sem sækir vörur úr sama flokki
-async function getProductFromCat(id: number ) {
+async function getProductFromCategory(id: number ) {
   const product = await getProductsDetails(id);
   const category = product.category_id;
   const url = new URL(`products?category=${category}`, baseurl);
@@ -79,7 +79,7 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    console.log("index", result);
+    // console.log("index", result);
 
     return {
       success: response.ok,
@@ -103,7 +103,7 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    console.log("index", result);
+    // console.log("index", result);
 
     if(result) {
       const { token } = result;
@@ -137,7 +137,7 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    console.log("index", result);
+    // console.log("index", result);
 
     return {
       success: response.ok,
@@ -162,6 +162,18 @@ async function getCategories() {
       success: response.ok,
       result
     }
+  }
+
+  async function getCategory(id: number, limit: number) {
+    const url = new URL(`products?category=${id}`, baseurl);
+    const response = await fetch(url.href);
+    if (!response.ok) {
+      return null;
+    }
+    
+    const result = await response.json();
+    
+    return result.items;
   }
 
   async function getCategoryDetails(id: number) {
@@ -203,10 +215,11 @@ export {
   getProducts,
   getCategories,
   getProductsDetails,
-  getProductFromCat,
+  getProductFromCategory,
   registerUser,
   loginUser,
   getCart,
   getCategoryDetails,
+  getCategory,
   searchInCategory,
 };

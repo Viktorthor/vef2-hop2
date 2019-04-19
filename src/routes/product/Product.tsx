@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import './Product.scss'
 import { IProduct } from '../../api/types';
-import { getProductsDetails, getProductFromCat } from '../../api/index';
+import { getProductsDetails, getProductFromCategory } from '../../api/index';
 import Button from '../../components/button/Button';
 import Products from '../../components/products/Products';
 import { Redirect } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { Redirect } from 'react-router-dom';
 export default function ProductRoutes(props: any) {
   
   const { id } = props.match.params;
-  console.log('HALLO',props);
+  // console.log('HALLO',props);
 
   const [details, setDetails] = useState({} as IProduct);
   const [products, setProducts] = useState([] as IProduct[]);
@@ -20,7 +20,7 @@ export default function ProductRoutes(props: any) {
     const foo = async () => {
       setLoading(true);
       const item: IProduct = await getProductsDetails(id);
-      console.log(item);
+      // console.log(item);
       setDetails(item);
       setLoading(false);
     };
@@ -30,7 +30,7 @@ export default function ProductRoutes(props: any) {
   useEffect(() => {
     const foo = async () => {
       setLoading(true);
-      const categor = await getProductFromCat(id);
+      const categor = await getProductFromCategory(id);
       setProducts(categor);
       setLoading(false);
     };
@@ -68,14 +68,13 @@ export default function ProductRoutes(props: any) {
         <div className="details__lower">
           <span>Fjöldi</span>
           <input className="details__input" type="textarea"></input>
+          
           <div className="details__button">
             <Button
             small={true}
             children="Bæta við körfu"
-            /*
-            TODO onclick handler til að bæta í körfu + loading state
-            */
             ></Button>
+          
           </div>
         </div>
       </div>
