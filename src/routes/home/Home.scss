@@ -3,4 +3,9 @@
 .home {
     max-width: $max-width;
     margin: 2rem 0;
+
+    .takki {
+        margin-top: $gutter/2;
+        margin-bottom: $gutter/2;
+    }
 }

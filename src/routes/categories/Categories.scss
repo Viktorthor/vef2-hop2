@@ -1,14 +1,14 @@
 @import '../../config.scss';
 
 .categories {
-    padding-right: 20px;
-    padding-bottom: 20px;
     max-width: 1400px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
     &__box {
+        margin-top: $gutter/2;
+        margin-bottom: $gutter/2;
         border: 2px;
         border-style: solid;
         width: 400px;
