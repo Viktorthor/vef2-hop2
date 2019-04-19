@@ -49,13 +49,15 @@ export default function Home() {
               history={history}
             ></Products>
           </div>
-          
-          <Link to="/categories">
-            <Button
-            >
-            Sýna alla flokka
-            </Button>
-          </Link>
+
+          <div className="takki">
+            <Link to="/categories">
+              <Button
+              >
+              Sýna alla flokka
+              </Button>
+            </Link>
+          </div>
 
           <div className="categories">
               
@@ -69,12 +71,3 @@ export default function Home() {
     </Fragment>
   );
 }
-
-
-/**
- * {data.map((i:any ) => {
- *  <Product
- *    productDetails={i}
- *  ></Product>
- * })}
- */
