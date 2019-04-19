@@ -75,13 +75,13 @@ export default function Cart() {
     if (!result.success) {
       setErrors(result.result.errors);
     } else {
-      setCartMessage('Pöntun send!')
+      setCartMessage('Pöntun send')
       setRegistered(true);
     }
     setCartLoading(false);
   } 
   
-  // skoða hvort notandi sé skráður inn
+  // Athugum hvort notandi sé skráður inn
   if (!username) {
     return (
       <Fragment>
@@ -93,7 +93,7 @@ export default function Cart() {
       </Fragment>
     );
   } 
-  // skoða hvort karfan sé tóm
+  // Athugum hvort karfan sé tóm, ef svo er skkilum upplýsingum
   else if (total === 0) {
     return (
       <Fragment>
@@ -105,6 +105,7 @@ export default function Cart() {
     </Fragment>
     )
   } else {
+    // Annars birtum við körfuna með hlutum í
     return (
       <Fragment>
         <Helmet title="Karfa" />
@@ -143,10 +144,11 @@ export default function Cart() {
               onChange={onChangeAddress}>
             </Input>      
           </div>
+          
           <div className="shippingInfo__button">
             <Button 
               onClick={onSubmit}
-              
+
             >
               Senda inn pöntun
             </Button>
