@@ -94,7 +94,9 @@ export default function Register(props: any) {
         >Nýskrá
       </Button>
     </div>
+    <div className="register__link">
       <Link to="/login" className="register__linkToLogin">Innskráning</Link>
+    </div>
   </div>
   );
 }

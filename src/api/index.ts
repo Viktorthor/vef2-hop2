@@ -135,7 +135,6 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    console.log("index", result);
 
     return {
       success: response.ok,
@@ -158,7 +157,8 @@ async function getCategories() {
   async function getCart() {
     const options = {
       headers: {
-        'content-type': 'application/json',
+         'Authorization': 'Bearer ' + localStorage.getItem('token'),
+         'Content-Type': 'application/json',
       },
       method: 'GET',
     };
@@ -213,9 +213,6 @@ async function getCategories() {
     localStorage.removeItem('username');
   }
 
-  /*
-  Leyndir Typpasvigar fyrir Viktor
-  */
 
 export {
   getProduct,
@@ -230,11 +227,5 @@ export {
   getCategoryDetails,
   searchInCategory,
   logOut,
-<<<<<<< HEAD
-  updateCart,
-  removeFromCart,
-  placeOrder
-=======
   postCart,
->>>>>>> 8fb76170545b3d433c4a59a0e45b8ac0343f6095
 };

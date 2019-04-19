@@ -1,50 +1,26 @@
 @import '../../config.scss';
 
-.reg {
-  padding: $gutter;
-
-  &__wrapper {
-    font-family: $font-heading;
-  }
-
-  &__contents {
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: $font-main;
-    padding: 10px;
-    width: 400px;
-  }
+.register {
 
   &__form {
-    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding-top: 15px;
+    font-family: $font-heading;
+    width: 400px;
+    padding-bottom: $gutter/2;
+    padding-top: $gutter/2;
   }
 
-  /*&__password {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 15px;
-  }*/
+  &__form:nth-child(2) {
+    padding-bottom: $gutter/2;
+  }
 
-  /*&__email {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }*/
+  &__link {
+    padding-top: $gutter/2;
+  }
 
-  &__login {
-    padding-top: 20px;
-    display: flex;
-    a {
-    color: black; 
+  &__link * {
     text-decoration: none;
-    }
-  }
-
-  &__takki {
-    display:flex;
-    padding-top: 15px;
+    color: black;
   }
 }

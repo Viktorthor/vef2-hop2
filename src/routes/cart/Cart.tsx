@@ -41,7 +41,6 @@ export default function Cart() {
     })
   }
 
-
   return (
     <Fragment>
       <Helmet title="Karfa" />
@@ -67,10 +66,10 @@ export default function Cart() {
           <Input
             label={'Heimilisfang:'}
             onChange={onChangeAddress}>
-          </Input>      
+          </Input>
         </div>
         <div className="shipping__button">
-          <Button 
+          <Button
             // onClick={onSubmit}
           >
             Senda inn pöntun
