@@ -16,6 +16,7 @@ export default function ProductRoutes(props: any) {
   const [products, setProducts] = useState([] as IProduct[]);
   const [loading, setLoading] = useState(false);
   const [amount, setAmount] = useState(0);
+  const [add, setAdd] = useState({ added: ''});
   //const id = 999;
    // Sækir vörur
    useEffect(() => {
@@ -52,6 +53,10 @@ export default function ProductRoutes(props: any) {
 
   async function addToCart() {
     const bag = await postCart(id, amount);
+    setAdd({
+      ...add,
+      added: "Bætt hefur verið í körfu",
+    })
   }
 
   if (loading) return (
@@ -83,9 +88,9 @@ export default function ProductRoutes(props: any) {
             children="Bæta við körfu"
             onClick={ addToCart }
             ></Button>
-
           </div>
         </div>
+        <p> { add.added } </p>
       </div>
     </div>
     <div className="more">
