@@ -105,11 +105,22 @@ async function getCategories() {
     const result = await response.json();
     console.log("index", result);
 
+    if(result) {
+      const { token } = result;
+      localStorage.setItem('token', token);
+    }
+
     return {
       success: response.ok,
       result
     }
   }
+
+// headers: {
+// 'Authorzation': 'Bearer ' + localStorage.getItem('token'),
+// 'Content-Type': 'application/json',
+// },
+
 // Fall til að bæta við körfu
   async function postCart(id : number) {
     const options = {
@@ -141,12 +152,12 @@ async function getCategories() {
       },
       method: 'GET',
     };
-  
+
     const url = new URL('/cart', baseurl);
-  
+
     const response = await fetch(url.href, options);
     const result = await response.json();
-  
+
     return {
       success: response.ok,
       result
@@ -186,7 +197,6 @@ async function getCategories() {
 
     return new Promise((resolve) => resolve(product))
   }
-
 
 export {
   getProduct,
