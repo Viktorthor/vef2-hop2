@@ -58,21 +58,25 @@ export default function ProductRoutes(props: any) {
       </div>
       <div className="details__info">
         <h3 className="details__title">{details.title}</h3>
-        <p className="details__category">Flokkur: {details.category_title}</p>
-        <p className="details__price">Verð: {details.price} kr.-</p>
+        <div className="details__catpri">
+        <p>Flokkur: {details.category_title}</p>
+        <p>Verð: {details.price} kr.-</p>
+        </div>
         {typeof details.description === 'string' && (details.description.split('\n').map((item, key) => (
           <p className="details__description" key={key}>{item}</p> ))
         )}
         <div className="details__lower">
           <span>Fjöldi</span>
           <input className="details__input" type="textarea"></input>
-          <Button
+          <div className="details__button">
+            <Button
             small={true}
             children="Bæta við körfu"
             /*
             TODO onclick handler til að bæta í körfu + loading state
             */
-          ></Button>
+            ></Button>
+          </div>
         </div>
       </div>
     </div>
