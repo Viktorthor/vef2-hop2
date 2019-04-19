@@ -7,7 +7,7 @@ import Products from '../../components/products/Products';
 import { Redirect } from 'react-router-dom';
 
 export default function ProductRoutes(props: any) {
-  
+
   const { id } = props.match.params;
   // console.log('HALLO',props);
 
@@ -53,7 +53,7 @@ export default function ProductRoutes(props: any) {
   return (
     <Fragment>
       <div className="details">
-      <div className="details__image"> 
+      <div className="details__image">
         <img className="details__img" src={details.image}></img>
       </div>
       <div className="details__info">
@@ -82,7 +82,7 @@ export default function ProductRoutes(props: any) {
     <div className="more">
       <h3>Meira úr {details.category_title}</h3>
       <div className="more__products">
-      
+
      <Products
       products={products}
       >
