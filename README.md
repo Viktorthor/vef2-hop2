@@ -12,10 +12,10 @@ Ekki admin:
 Admin:
 * username : admin / password : hóp1-2019-admin
 
-##Uppsetning verkefnis
+## Uppsetning verkefnis
 * Keyra þarf npm install til að fá alla viðeigandi pakka
 * Næst skal keyra npm start til að runna react-script
-
+---------------------------------------------------------
 ---------------------------------------------------------
 Útfæra skal framenda ofan á vefþjónustur úr hópverkefni 1.
 
