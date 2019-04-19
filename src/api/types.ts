@@ -16,7 +16,7 @@ export interface IProduct {
   updated?: Date;
 }
 
-export interface IError {
+export interface IErrors {
   field: string;
   error: string;
 }
@@ -32,15 +32,11 @@ export interface ICart {
   updated?: Date;
 }
 
-
-/** ATH UR PRODUCT.TSX nedst
- * <div className="more__products">
-        {console.log("products núna", details.id)}
-        {products.map((product) => (
-          <Product
-            key={product.id}
-            product={product}
-          ></Product>
-        ))}
-      </div>
- */
+export interface IOrders {
+  id: number;
+  name: string;
+  address: string;
+  user_id: number;
+  created?: Date;
+  updated?: Date;
+}

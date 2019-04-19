@@ -4,7 +4,7 @@ import { IProduct } from '../../api/types';
 import { getProductsDetails, getProductFromCategory } from '../../api/index';
 import Button from '../../components/button/Button';
 import Products from '../../components/products/Products';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { postCart } from '../../api/index';
 
 export default function ProductRoutes(props: any) {
@@ -15,11 +15,8 @@ export default function ProductRoutes(props: any) {
   const [details, setDetails] = useState({} as IProduct);
   const [products, setProducts] = useState([] as IProduct[]);
   const [loading, setLoading] = useState(false);
-<<<<<<< HEAD
-=======
   const [amount, setAmount] = useState(0);
   //const id = 999;
->>>>>>> 4eee6541675e3ff3227696889dccd00e6bed69ca
    // Sækir vörur
    useEffect(() => {
     const foo = async () => {
@@ -81,12 +78,13 @@ export default function ProductRoutes(props: any) {
           <span>Fjöldi</span>
           <input onChange={onChangeAmount} className="details__input" type="textarea"></input>
           <div className="details__button">
-            <Button
-            small={true}
-            children="Bæta við körfu"
-            onClick={ addToCart }
-            ></Button>
-
+          
+              <Button
+                small={true}
+                children="Bæta við körfu"
+                onClick={ addToCart }
+              ></Button> 
+          
           </div>
         </div>
       </div>

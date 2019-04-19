@@ -142,6 +142,70 @@ async function getCategories() {
     }
   }
 
+  export async function updateCart(id: number, quantity: number) {
+    console.log('Blessaður!', id, quantity);
+    
+    const options = {
+      body: JSON.stringify({
+        quantity
+      }),
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'content-type': 'application/json',
+      },
+      method: 'PATCH',
+    };
+  
+    const url = new URL(`cart/line/${id}`, baseurl);
+  
+    const response = await fetch(url.href, options);
+    const result = await response.json();
+  
+    return {
+      success: response.ok,
+      result
+    }
+  }
+  
+  export async function removeFromCart(id: number) {
+    const options = {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'content-type': 'application/json',
+      },
+      method: 'DELETE',
+    };
+  
+    const url = new URL(`cart/line/${id}`, baseurl);
+    const response = await fetch(url.href, options);
+  
+    return response.ok;
+  }
+
+  export async function placeOrder(name: string, address: string) {
+    const options = {
+      body: JSON.stringify({
+        name,
+        address
+      }),
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    };
+    
+    const url = new URL('/orders', baseurl);
+  
+    const response = await fetch(url.href, options);
+    const result = await response.json();
+    
+    return {
+      success: response.ok,
+      result
+    }
+  }
+
   async function getCategory(id: number, limit: number) {
     const url = new URL(`products?category=${id}`, baseurl);
     const response = await fetch(url.href);
@@ -190,6 +254,28 @@ async function getCategories() {
   async function searchInCategory(searchString: string, id: number) {
 
   }
+
+  export async function getOrders() {
+    const options = {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'content-type': 'application/json',
+      },
+      method: 'GET',
+    };
+    
+    const url = new URL(`orders`, baseurl);
+    const response = await fetch(url.href, options);
+    
+    if (!response.ok) {
+      return null;
+    }
+  
+    const result = await response.json();
+    
+    return result;
+  }
+  
 
 
   // Fall sem sækir vöru eftir id-i
