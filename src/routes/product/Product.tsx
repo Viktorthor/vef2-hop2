@@ -4,7 +4,6 @@ import { IProduct } from '../../api/types';
 import { getProductsDetails, getProductFromCategory } from '../../api/index';
 import Button from '../../components/button/Button';
 import Products from '../../components/products/Products';
-import { Link } from 'react-router-dom';
 import { postCart } from '../../api/index';
 
 export default function ProductRoutes(props: any) {
@@ -17,7 +16,7 @@ export default function ProductRoutes(props: any) {
   const [loading, setLoading] = useState(false);
   const [amount, setAmount] = useState(0);
   const [add, setAdd] = useState({ added: ''});
-  //const id = 999;
+ 
    // Sækir vörur
    useEffect(() => {
     const foo = async () => {

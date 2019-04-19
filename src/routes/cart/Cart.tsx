@@ -146,6 +146,7 @@ export default function Cart() {
           <div className="shippingInfo__button">
             <Button 
               onClick={onSubmit}
+              
             >
               Senda inn pöntun
             </Button>

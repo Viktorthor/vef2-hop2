@@ -142,7 +142,7 @@ async function getCategories() {
     }
   }
 
-  export async function updateCart(id: number, quantity: number) {
+  async function updateCart(id: number, quantity: number) {
     console.log('Blessaður!', id, quantity);
     
     const options = {
@@ -167,7 +167,7 @@ async function getCategories() {
     }
   }
   
-  export async function removeFromCart(id: number) {
+  async function removeFromCart(id: number) {
     const options = {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token'),
@@ -182,7 +182,7 @@ async function getCategories() {
     return response.ok;
   }
 
-  export async function placeOrder(name: string, address: string) {
+  async function placeOrder(name: string, address: string) {
     const options = {
       body: JSON.stringify({
         name,
@@ -315,4 +315,7 @@ export {
   searchInCategory,
   logOut,
   postCart,
+  updateCart,
+  removeFromCart,
+  placeOrder
 };

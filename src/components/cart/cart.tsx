@@ -5,7 +5,7 @@ import {Link, Redirect} from 'react-router-dom'
 import { updateCart, removeFromCart } from '../../api/index';
 import Button from '../../components/button/Button';
 import { IProduct } from '../../api/types';
-import { async } from 'q';
+
 
 export default function Cart(props: any) {
   const { product, onClick, onChange } = props;
@@ -61,6 +61,7 @@ export default function Cart(props: any) {
     onCartChange()
   }
 
+
   return (
     <Link to={`/cart`}  className={deleted ? "cart__item__deleted" : "cart__item"} style={{ textDecoration: 'none', color: '#000' }}>
       
@@ -82,7 +83,6 @@ export default function Cart(props: any) {
             onClick={updateCartHandler}
             small={true}
             children="Uppfæra"
-            // TODO onclick handler til að bæta í körfu + loading state
           ></Button>
           {cartMessage && (
             <span className="cart__form__topPart__cartMessage">{cartMessage}</span>
@@ -96,7 +96,6 @@ export default function Cart(props: any) {
             onClick={removeFromCartHandler}
             small={true}
             children="Eyða línu"
-            // TODO onclick handler til að bæta í körfu + loading state
           ></Button>
         </div>
       </div>
