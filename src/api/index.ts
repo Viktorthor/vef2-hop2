@@ -143,6 +143,18 @@ async function getCategories() {
     }
   }
 
+  async function getCategory(id: number, limit: number) {
+    const url = new URL(`products?category=${id}`, baseurl);
+    const response = await fetch(url.href);
+    if(!response.ok) {
+      return null;
+    }
+
+    const result = await response.json();
+
+    return result.items;
+  }
+
   async function getCart() {
     const options = {
       headers: {
@@ -209,6 +221,7 @@ export {
   getProduct,
   getProducts,
   getCategories,
+  getCategory,
   getProductsDetails,
   getProductFromCategory,
   registerUser,
