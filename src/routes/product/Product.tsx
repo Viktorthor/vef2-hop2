@@ -15,6 +15,7 @@ export default function ProductRoutes(props: any) {
   const [details, setDetails] = useState({} as IProduct);
   const [products, setProducts] = useState([] as IProduct[]);
   const [loading, setLoading] = useState(false);
+  const [amount, setAmount] = useState(0);
   //const id = 999;
    // Sækir vörur
    useEffect(() => {
@@ -45,12 +46,20 @@ export default function ProductRoutes(props: any) {
     setLoading(false);
   }
 
+  function onChangeAmount(e: any) {
+    setAmount(e.target.value);
+  }
+
+  async function addToCart() {
+    const bag = await postCart(id, amount);
+    console.log(bag);
+  }
+
   if (loading) return (
     <div className="details">
       <h3>Sæki upplýsingar</h3>
     </div>
   )
-    console.log('HER ER EG', details);
   return (
     <Fragment>
       <div className="details">
@@ -68,12 +77,13 @@ export default function ProductRoutes(props: any) {
         )}
         <div className="details__lower">
           <span>Fjöldi</span>
-          <input className="details__input" type="textarea"></input>
+          <input onChange={onChangeAmount} className="details__input" type="textarea"></input>
 
           <div className="details__button">
             <Button
             small={true}
             children="Bæta við körfu"
+            onClick={ addToCart }
             ></Button>
 
           </div>
