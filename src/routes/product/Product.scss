@@ -1,6 +1,51 @@
 @import '../../config.scss';
 
-.productDetails {
+.details {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: $gutter;
+
+    &__image {
+        padding-top: $gutter;
+        padding-bottom: $gutter;
+        padding-left: $gutter;
+        padding-right: $gutter/2;
+    }
+
+    &__info {
+        padding-top: $gutter;
+        padding-bottom: $gutter;
+        padding-left: $gutter/2;
+        padding-right: $gutter;
+    }
+
+    &__title {
+        font-size: 30px;
+        font-family: $font-heading;
+        padding-bottom: $gutter/2;
+    }
+
+    &__catpri{
+        padding-bottom: $gutter/2;
+        padding-top: $gutter/2;
+    }
+
+    &__description {
+        padding-top: $gutter/2;
+        padding-bottom: $gutter/2;
+    }
+
+    &__input {
+        max-width: $gutter*2;
+    }
+
+    &__lower {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        max-width: 250px;
+    }
 }
 
 .products {
