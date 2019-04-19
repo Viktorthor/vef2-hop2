@@ -31,7 +31,6 @@ export default function CategoriesRoute(props: any) {
   return (
     <div className="categories">
       {categories.map((category) => (
-
       // <Link to={`/categories/${category.id}`} onClick={(e: any) => click(e, category.id)} className={classNames("category",notClickable && "notClickable")}>
           <div
             key={category.id}
@@ -39,7 +38,7 @@ export default function CategoriesRoute(props: any) {
           >
             <p className="categories__title">{category.title}</p>
           </div>
-       //</Link>
+      //</Link>
     ))}
   </div>
   )
