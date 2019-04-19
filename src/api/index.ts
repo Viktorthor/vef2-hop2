@@ -27,7 +27,7 @@ async function getProductsDetails(id: number) {
   }
 
   const result = await response.json();
-  // console.log(result);
+  console.log('RESPONSEDETAILS', result);
   return result;
 }
 
@@ -79,7 +79,7 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    // console.log("index", result);
+    console.log("index", result);
 
     return {
       success: response.ok,
@@ -103,7 +103,7 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    // console.log("index", result);
+    console.log("index", result);
 
     if(result) {
       const { token } = result;
@@ -117,19 +117,16 @@ async function getCategories() {
     }
   }
 
-// headers: {
-// 'Authorzation': 'Bearer ' + localStorage.getItem('token'),
-// 'Content-Type': 'application/json',
-// },
-
 // Fall til að bæta við körfu
-  async function postCart(id : number) {
+  async function postCart(id : number, amount: number) {
     const options = {
       body: JSON.stringify({
-        id
+        product:id,
+        quantity:amount,
       }),
       headers: {
-        'content-type': 'application/json',
+         'Authorization': 'Bearer ' + localStorage.getItem('token'),
+         'Content-Type': 'application/json',
       },
       method: 'POST',
     };
@@ -138,7 +135,7 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    // console.log("index", result);
+    console.log("index", result);
 
     return {
       success: response.ok,
@@ -163,18 +160,6 @@ async function getCategories() {
       success: response.ok,
       result
     }
-  }
-
-  async function getCategory(id: number, limit: number) {
-    const url = new URL(`products?category=${id}`, baseurl);
-    const response = await fetch(url.href);
-    if (!response.ok) {
-      return null;
-    }
-    
-    const result = await response.json();
-    
-    return result.items;
   }
 
   async function getCategoryDetails(id: number) {
@@ -226,7 +211,7 @@ export {
   loginUser,
   getCart,
   getCategoryDetails,
-  getCategory,
   searchInCategory,
   logOut,
+  postCart,
 };
