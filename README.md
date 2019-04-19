@@ -3,7 +3,7 @@
 ## Ómar Þór Arnarsson (otha3@hi.is)
 ## Viktor Þór Freysson (vthf1@hi.is)
 
-#Innskráning
+# Innskráning
 Innskráning er í raun sú sama og sýnilausn.
 
 Ekki admin:
