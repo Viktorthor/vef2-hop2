@@ -79,7 +79,6 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    console.log("index", result);
 
     return {
       success: response.ok,
@@ -103,7 +102,6 @@ async function getCategories() {
 
     const response = await fetch(url.href, options);
     const result = await response.json();
-    console.log("index", result);
 
     if(result) {
       const { token } = result;
@@ -143,7 +141,6 @@ async function getCategories() {
   }
 
   async function updateCart(id: number, quantity: number) {
-    console.log('Blessaður!', id, quantity);
     
     const options = {
       body: JSON.stringify({

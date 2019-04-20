@@ -6,7 +6,6 @@ import { updateCart, removeFromCart } from '../../api/index';
 import Button from '../../components/button/Button';
 import { IProduct } from '../../api/types';
 
-
 export default function Cart(props: any) {
   const { product, onClick, onChange } = props;
   
@@ -32,7 +31,7 @@ export default function Cart(props: any) {
     setCartLoading(true);
     setCartMessage('');
     if(quantity < 1) {
-      setCartMessage('Vinsamlegast veljið fjölda stærri en 0');
+      setCartMessage('Vinsamlegast veljið fjölda meiri en 0');
       setCartLoading(false)
       return;
     }
@@ -79,14 +78,14 @@ export default function Cart(props: any) {
         <div className="cart__form__topPart">
           <span className="cart__form__number">Fjöldi:</span>
           <input className="cart__form__input" onChange={onChangeQuantity} type="number" min="1" value={quantity}></input>
-          <Button
-            onClick={updateCartHandler}
-            small={true}
-            children="Uppfæra"
-          ></Button>
-          {cartMessage && (
-            <span className="cart__form__topPart__cartMessage">{cartMessage}</span>
-          )}
+            <Button
+              onClick={updateCartHandler}
+              small={true}
+              children="Uppfæra"
+            ></Button>
+            {cartMessage && (
+              <span className="cart__form__topPart__cartMessage">{cartMessage}</span>
+            )}
         </div>
         <div className="cart__form__middlePart">
           <p>Samtals: {details.total} kr.-</p>

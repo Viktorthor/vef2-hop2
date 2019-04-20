@@ -95,9 +95,9 @@ export default function ProductRoutes(props: any) {
     <div className="more">
       <h3>Meira úr {details.category_title}</h3>
       <div className="more__products">
-
-     <Products
-      products={products}
+      {/*ATH Þetta er rétt en síðan renderast ekki þegar ýtt er á aðra vöru, samt breytist id-ið */}
+      <Products
+        products={products}
       >
       </Products>
 

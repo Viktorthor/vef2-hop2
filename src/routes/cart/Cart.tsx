@@ -14,7 +14,6 @@ export default function Cart() {
   const username = localStorage.getItem('username');
 
   const [cart, setCart] = useState([] as ICart[]);
-  // const [products, setProducts] = useState([] as IProduct[]);
   const [errors, setErrors] = useState([] as IErrors[]);
 
   const [loading, setLoading] = useState(false);
@@ -64,6 +63,7 @@ export default function Cart() {
     setLoading(false)
   }
 
+  // Afhvejru virkar þetta ekki eins og það á að gera?
   async function onSubmit(){
     setCartLoading(true);
     setCartMessage('');
@@ -97,11 +97,11 @@ export default function Cart() {
   else if (total === 0) {
     return (
       <Fragment>
-      <Helmet title="Karfa" />
-      <div className="cart">
-        <h1>Engar vörur í körfu!</h1>
-        <Link to="/" className="register__linkToLogin">Skoða vörur</Link>
-      </div>
+        <Helmet title="Karfa" />
+          <div className="cart">
+            <h1>Engar vörur í körfu!</h1>
+              <Link to="/" className="register__linkToLogin">Skoða vörur</Link>
+          </div>
     </Fragment>
     )
   } else {
@@ -115,11 +115,11 @@ export default function Cart() {
           )}
           {username && cart.map((product) => (
             <CartItem
-            onChange={onCartChange}
-            onClick={null}
-            key={product.id}
-            product={product}
-          ></CartItem>
+              onChange={onCartChange}
+              onClick={null}
+              key={product.id}
+              product={product}
+            ></CartItem>
           ))}
           <h3 className={'cart__total'}>Karfa samtals: {total} kr.-</h3>
         </div>
@@ -148,7 +148,6 @@ export default function Cart() {
           <div className="shippingInfo__button">
             <Button 
               onClick={onSubmit}
-
             >
               Senda inn pöntun
             </Button>
